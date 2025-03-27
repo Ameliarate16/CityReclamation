@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://ca182hq60fcho"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="GUILayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="PlantingContainer" type="BoxContainer" parent="GUILayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -60.0
+offset_right = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="HerbPanel" type="PanelContainer" parent="GUILayer/PlantingContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="HerbBox" type="ColorRect" parent="GUILayer/PlantingContainer/HerbPanel"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="HerbButton" type="TextureButton" parent="GUILayer/PlantingContainer/HerbPanel/HerbBox"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 40.0
+offset_bottom = 41.0
+
+[node name="BushPanel" type="PanelContainer" parent="GUILayer/PlantingContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="BushBox" type="ColorRect" parent="GUILayer/PlantingContainer/BushPanel"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BushButton" type="TextureButton" parent="GUILayer/PlantingContainer/BushPanel/BushBox"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TreePanel" type="PanelContainer" parent="GUILayer/PlantingContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="TreeBox" type="ColorRect" parent="GUILayer/PlantingContainer/TreePanel"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TreeButton" type="TextureButton" parent="GUILayer/PlantingContainer/TreePanel/TreeBox"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MushPanel" type="PanelContainer" parent="GUILayer/PlantingContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="MushBox" type="ColorRect" parent="GUILayer/PlantingContainer/MushPanel"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MushButton" type="TextureButton" parent="GUILayer/PlantingContainer/MushPanel/MushBox"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ResourceContainer" type="BoxContainer" parent="GUILayer"]
+offset_right = 175.0
+offset_bottom = 51.0
+
+[node name="NutrientsLabel" type="RichTextLabel" parent="GUILayer/ResourceContainer"]
+layout_mode = 2
+text = "Nutrients:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="NutrientsCount" type="RichTextLabel" parent="GUILayer/ResourceContainer"]
+layout_mode = 2
+text = "100"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="NutrientsRate" type="RichTextLabel" parent="GUILayer/ResourceContainer"]
+layout_mode = 2
+text = "+0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="YearContainer" type="BoxContainer" parent="GUILayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="YearLabel" type="RichTextLabel" parent="GUILayer/YearContainer"]
+layout_mode = 2
+text = "Year"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="YearCount" type="RichTextLabel" parent="GUILayer/YearContainer"]
+layout_mode = 2
+text = "2100"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="EntityListContainer" type="TabContainer" parent="GUILayer"]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.074
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = 0.0480003
+grow_horizontal = 0
+grow_vertical = 2
+current_tab = 0
+
+[node name="Plants" type="BoxContainer" parent="GUILayer/EntityListContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Animals" type="BoxContainer" parent="GUILayer/EntityListContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
