@@ -1,9 +1,12 @@
-[gd_scene format=3 uid="uid://ca182hq60fcho"]
+[gd_scene load_steps=2 format=3 uid="uid://ca182hq60fcho"]
+
+[ext_resource type="Script" uid="uid://dctceiewoeq45" path="res://scripts/GUIController.gd" id="1_mmojm"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="GUILayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
+script = ExtResource("1_mmojm")
 
 [node name="PlantingContainer" type="BoxContainer" parent="GUILayer"]
 anchors_preset = 12
@@ -27,6 +30,7 @@ layout_mode = 2
 color = Color(0, 0, 0, 1)
 
 [node name="HerbButton" type="TextureButton" parent="GUILayer/PlantingContainer/HerbPanel/HerbBox"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 0
 offset_top = 1.0
 offset_right = 40.0
@@ -42,6 +46,7 @@ layout_mode = 2
 color = Color(0, 0, 0, 1)
 
 [node name="BushButton" type="TextureButton" parent="GUILayer/PlantingContainer/BushPanel/BushBox"]
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -124,13 +129,12 @@ autowrap_mode = 0
 [node name="EntityListContainer" type="TabContainer" parent="GUILayer"]
 anchors_preset = -1
 anchor_left = 1.0
-anchor_top = 0.074
+anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -160.0
-offset_top = 0.0480003
 grow_horizontal = 0
-grow_vertical = 2
+grow_vertical = 0
 current_tab = 0
 
 [node name="Plants" type="BoxContainer" parent="GUILayer/EntityListContainer"]

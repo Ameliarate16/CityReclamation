@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://bkpqvqinna2qd"]
+
+[ext_resource type="Script" uid="uid://bquant640klwd" path="res://scripts/Plant.gd" id="1_hmblq"]
+[ext_resource type="Texture2D" uid="uid://bof0u845hbq2f" path="res://assets/weed.png" id="1_rhnbr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmblq"]
+atlas = ExtResource("1_rhnbr")
+region = Rect2(0, 0, 3, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cptaw"]
+atlas = ExtResource("1_rhnbr")
+region = Rect2(3, 0, 3, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eunp4"]
+atlas = ExtResource("1_rhnbr")
+region = Rect2(6, 0, 3, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3swah"]
+atlas = ExtResource("1_rhnbr")
+region = Rect2(9, 0, 3, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpg1g"]
+atlas = ExtResource("1_rhnbr")
+region = Rect2(12, 0, 3, 4)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6dfr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmblq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cptaw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eunp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3swah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpg1g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Weed" type="Node2D" groups=["PlantEntities"]]
+script = ExtResource("1_hmblq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_v6dfr")

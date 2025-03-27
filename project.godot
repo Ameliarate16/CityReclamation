@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 project/assembly_name="CityReclamation"
 
+[global_group]
+
+AnimalEntities=""
+PlantEntities=""
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
