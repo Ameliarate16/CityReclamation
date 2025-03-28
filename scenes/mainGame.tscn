@@ -1,13 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ca182hq60fcho"]
+[gd_scene load_steps=3 format=3 uid="uid://ca182hq60fcho"]
 
-[ext_resource type="Texture2D" uid="uid://d23qfg2qkcxsp" path="res://assets/amanita.png" id="1_mw4qg"]
-
-[sub_resource type="Theme" id="Theme_l2dnu"]
-default_base_scale = 12.5
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mmojm"]
-atlas = ExtResource("1_mw4qg")
-region = Rect2(9, 0, 3, 4)
+[ext_resource type="Script" uid="uid://d4g6it7okbb0h" path="res://scripts/seed_buttons.gd" id="2_iuu36"]
+[ext_resource type="Texture2D" uid="uid://civ2ry1lhbf83" path="res://assets/ui-buttons.png" id="2_mmojm"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -24,65 +18,56 @@ offset_top = -60.0
 offset_right = -10.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = SubResource("Theme_l2dnu")
 theme_override_constants/separation = 10
+script = ExtResource("2_iuu36")
 
-[node name="HerbPanel" type="PanelContainer" parent="GUILayer/PlantingContainer"]
+[node name="HerbButton" type="Control" parent="GUILayer/PlantingContainer"]
+custom_minimum_size = Vector2(88, 88)
 layout_mode = 2
 size_flags_vertical = 4
+mouse_default_cursor_shape = 2
 
-[node name="HerbBox" type="ColorRect" parent="GUILayer/PlantingContainer/HerbPanel"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-color = Color(0, 0, 0, 1)
+[node name="Sprite2D" type="Sprite2D" parent="GUILayer/PlantingContainer/HerbButton"]
+scale = Vector2(4, 4)
+texture = ExtResource("2_mmojm")
+centered = false
+hframes = 5
 
-[node name="HerbButton" type="TextureButton" parent="GUILayer/PlantingContainer/HerbPanel/HerbBox"]
-layout_mode = 0
-offset_top = 1.0
-offset_right = 40.0
-offset_bottom = 41.0
-
-[node name="BushPanel" type="PanelContainer" parent="GUILayer/PlantingContainer"]
+[node name="MushButton" type="Control" parent="GUILayer/PlantingContainer"]
+custom_minimum_size = Vector2(88, 88)
 layout_mode = 2
 size_flags_vertical = 4
+mouse_default_cursor_shape = 2
 
-[node name="BushBox" type="ColorRect" parent="GUILayer/PlantingContainer/BushPanel"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-color = Color(0, 0, 0, 1)
+[node name="Sprite2D" type="Sprite2D" parent="GUILayer/PlantingContainer/MushButton"]
+scale = Vector2(4, 4)
+texture = ExtResource("2_mmojm")
+centered = false
+hframes = 5
 
-[node name="BushButton" type="TextureButton" parent="GUILayer/PlantingContainer/BushPanel/BushBox"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TreePanel" type="PanelContainer" parent="GUILayer/PlantingContainer"]
+[node name="BushButton" type="Control" parent="GUILayer/PlantingContainer"]
+custom_minimum_size = Vector2(88, 88)
 layout_mode = 2
 size_flags_vertical = 4
+mouse_default_cursor_shape = 2
 
-[node name="TreeBox" type="ColorRect" parent="GUILayer/PlantingContainer/TreePanel"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-color = Color(0, 0, 0, 1)
+[node name="Sprite2D" type="Sprite2D" parent="GUILayer/PlantingContainer/BushButton"]
+scale = Vector2(4, 4)
+texture = ExtResource("2_mmojm")
+centered = false
+hframes = 5
 
-[node name="TreeButton" type="TextureButton" parent="GUILayer/PlantingContainer/TreePanel/TreeBox"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="MushPanel" type="PanelContainer" parent="GUILayer/PlantingContainer"]
+[node name="TreeButton" type="Control" parent="GUILayer/PlantingContainer"]
+custom_minimum_size = Vector2(88, 88)
 layout_mode = 2
 size_flags_vertical = 4
+mouse_default_cursor_shape = 2
 
-[node name="MushBox" type="ColorRect" parent="GUILayer/PlantingContainer/MushPanel"]
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-color = Color(0, 0, 0, 1)
-
-[node name="MushButton" type="TextureButton" parent="GUILayer/PlantingContainer/MushPanel/MushBox"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Sprite2D" type="Sprite2D" parent="GUILayer/PlantingContainer/TreeButton"]
+scale = Vector2(4, 4)
+texture = ExtResource("2_mmojm")
+centered = false
+hframes = 5
 
 [node name="ResourceContainer" type="BoxContainer" parent="GUILayer"]
 offset_right = 175.0
@@ -134,13 +119,12 @@ autowrap_mode = 0
 [node name="EntityListContainer" type="TabContainer" parent="GUILayer"]
 anchors_preset = -1
 anchor_left = 1.0
-anchor_top = 0.074
+anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -160.0
-offset_top = 0.0480003
 grow_horizontal = 0
-grow_vertical = 2
+grow_vertical = 0
 current_tab = 0
 
 [node name="Plants" type="BoxContainer" parent="GUILayer/EntityListContainer"]
@@ -152,9 +136,7 @@ visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="CheckBox" type="CheckBox" parent="GUILayer"]
-offset_left = 124.0
-offset_top = 128.0
-offset_right = 213.0
-offset_bottom = 211.0
-icon = SubResource("AtlasTexture_mmojm")
+[connection signal="gui_input" from="GUILayer/PlantingContainer/HerbButton" to="GUILayer/PlantingContainer" method="_on_herb_button_gui_input"]
+[connection signal="gui_input" from="GUILayer/PlantingContainer/MushButton" to="GUILayer/PlantingContainer" method="_on_mush_button_gui_input"]
+[connection signal="gui_input" from="GUILayer/PlantingContainer/BushButton" to="GUILayer/PlantingContainer" method="_on_bush_button_gui_input"]
+[connection signal="gui_input" from="GUILayer/PlantingContainer/TreeButton" to="GUILayer/PlantingContainer" method="_on_tree_button_gui_input"]

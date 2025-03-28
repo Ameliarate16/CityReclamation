@@ -15,9 +15,18 @@ run/main_scene="res://scenes/mainGame.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://scripts/global.gd"
+
 [dotnet]
 
 project/assembly_name="CityReclamation"
+
+[global_group]
+
+AnimalEntities=""
+PlantEntities=""
 
 [rendering]
 
