@@ -7,7 +7,6 @@
 
 [node name="GUILayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
-script = ExtResource("1_mmojm")
 
 [node name="PlantingContainer" type="BoxContainer" parent="GUILayer"]
 anchors_preset = 12
