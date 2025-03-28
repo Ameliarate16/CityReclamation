@@ -1,4 +1,13 @@
-[gd_scene format=3 uid="uid://ca182hq60fcho"]
+[gd_scene load_steps=4 format=3 uid="uid://ca182hq60fcho"]
+
+[ext_resource type="Texture2D" uid="uid://d23qfg2qkcxsp" path="res://assets/amanita.png" id="1_mw4qg"]
+
+[sub_resource type="Theme" id="Theme_l2dnu"]
+default_base_scale = 12.5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmojm"]
+atlas = ExtResource("1_mw4qg")
+region = Rect2(9, 0, 3, 4)
 
 [node name="Node2D" type="Node2D"]
 
@@ -15,6 +24,7 @@ offset_top = -60.0
 offset_right = -10.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = SubResource("Theme_l2dnu")
 theme_override_constants/separation = 10
 
 [node name="HerbPanel" type="PanelContainer" parent="GUILayer/PlantingContainer"]
@@ -141,3 +151,10 @@ metadata/_tab_index = 0
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
+
+[node name="CheckBox" type="CheckBox" parent="GUILayer"]
+offset_left = 124.0
+offset_top = 128.0
+offset_right = 213.0
+offset_bottom = 211.0
+icon = SubResource("AtlasTexture_mmojm")
