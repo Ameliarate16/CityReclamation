@@ -19,5 +19,5 @@ func _ready():
 	maxGrowthLevel = get_node("AnimatedSprite2D").sprite_frames.get_frame_count("default") - 1
 	get_node("/root/Node2D/GUILayer").timePassed.connect(Callable(self, "on_time_pass"))
 
-func get_upkeep():
+func getUpkeep():
 	return upkeep

@@ -28,6 +28,14 @@ project/assembly_name="CityReclamation"
 AnimalEntities=""
 PlantEntities=""
 HerbPlants=""
+BushPlants=""
+TreePlants=""
+MushroomPlants=""
+HerbEaters=""
+BushEaters=""
+TreeEaters=""
+MushroomEaters=""
+AnimalEaters=""
 
 [rendering]
 

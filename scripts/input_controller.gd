@@ -42,4 +42,4 @@ func _unhandled_input(event):
 			
 			newPlant.setPos(click_position)
 			add_child(newPlant)
-			createPlant.emit(newPlant.get_upkeep())
+			createPlant.emit(newPlant.getUpkeep())

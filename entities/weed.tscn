@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bkpqvqinna2qd"]
 
-[ext_resource type="Script" uid="uid://bquant640klwd" path="res://scripts/Plant.gd" id="1_hmblq"]
+[ext_resource type="Script" uid="uid://bquant640klwd" path="res://scripts/plant.gd" id="1_hmblq"]
 [ext_resource type="Texture2D" uid="uid://bof0u845hbq2f" path="res://assets/weed.png" id="1_rhnbr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hmblq"]

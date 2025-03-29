@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://bv8y1d3pwiope"]
+
+[ext_resource type="Script" uid="uid://dqkxkrj6tytjx" path="res://animal.gd" id="1_t1yv3"]
+[ext_resource type="Texture2D" uid="uid://e0a44ti8x8ix" path="res://assets/bunny.png" id="2_r412g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uj1on"]
+atlas = ExtResource("2_r412g")
+region = Rect2(0, 0, 5, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xkyp"]
+atlas = ExtResource("2_r412g")
+region = Rect2(5, 0, 5, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ry2wa"]
+atlas = ExtResource("2_r412g")
+region = Rect2(15, 0, 5, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17rqx"]
+atlas = ExtResource("2_r412g")
+region = Rect2(10, 0, 5, 5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8lkxg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uj1on")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xkyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ry2wa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17rqx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bunny" type="Node2D" groups=["AnimalEntities", "HerbEaters"]]
+script = ExtResource("1_t1yv3")
+income = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_8lkxg")

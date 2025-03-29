@@ -53,3 +53,8 @@ func _on_input_controller_create_plant(upkeep):
 		nutrientIncome -= upkeep
 	updateNutrientsLabel()
 	
+
+
+func _on_animal_spawner_create_animal(income):
+	nutrientIncome += income
+	updateNutrientsLabel()
