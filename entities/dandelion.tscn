@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://b2782uw8ji36i"]
+
+[ext_resource type="Script" uid="uid://bquant640klwd" path="res://scripts/Plant.gd" id="1_hvani"]
+[ext_resource type="Texture2D" uid="uid://do5w2j8vcdycm" path="res://assets/dandelion.png" id="2_hvani"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlo04"]
+atlas = ExtResource("2_hvani")
+region = Rect2(3, 0, 3, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtw1n"]
+atlas = ExtResource("2_hvani")
+region = Rect2(0, 0, 3, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jq6m"]
+atlas = ExtResource("2_hvani")
+region = Rect2(6, 0, 3, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pytvm"]
+atlas = ExtResource("2_hvani")
+region = Rect2(9, 0, 3, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltf4r"]
+atlas = ExtResource("2_hvani")
+region = Rect2(12, 0, 3, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_refjb"]
+atlas = ExtResource("2_hvani")
+region = Rect2(15, 0, 3, 6)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6dfr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlo04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtw1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jq6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pytvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltf4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_refjb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Dandelion" type="Node2D" groups=["HerbPlants", "PlantEntities"]]
+script = ExtResource("1_hvani")
+upkeep = 1
+spaceRequired = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_v6dfr")

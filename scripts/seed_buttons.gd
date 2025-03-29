@@ -5,6 +5,9 @@ extends BoxContainer
 @onready var bush_sprite : Sprite2D = $BushButton/Sprite2D
 @onready var tree_sprite : Sprite2D = $TreeButton/Sprite2D
 
+func _ready():
+	select(Global.SeedType.HERB)
+
 func select(which : Global.SeedType) -> void:
 	Global.selected = which
 	herb_sprite.frame = 0

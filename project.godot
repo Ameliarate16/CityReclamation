@@ -27,6 +27,7 @@ project/assembly_name="CityReclamation"
 
 AnimalEntities=""
 PlantEntities=""
+HerbPlants=""
 
 [rendering]
 

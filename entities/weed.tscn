@@ -46,8 +46,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Weed" type="Node2D" groups=["PlantEntities"]]
+[node name="Weed" type="Node2D" groups=["HerbPlants", "PlantEntities"]]
 script = ExtResource("1_hmblq")
+upkeep = 1
+spaceRequired = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
