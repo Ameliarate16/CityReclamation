@@ -27,15 +27,15 @@ func _process(delta):
 	#		nutrientUpkeep += plant.upkeep
 
 func updateYearLabel():
-	$YearContainer/YearCount.text = str(currentYear)
+	$Control/YearContainer/YearCount.text = str(currentYear)
 
 func updateNutrientsLabel():
-	$ResourceContainer/NutrientsCount.text = str(currentNutrients)
+	$Control/ResourceContainer/NutrientsCount.text = str(currentNutrients)
 	var nutrientRate = nutrientIncome - nutrientUpkeep
 	if nutrientRate >= 0:
-		$ResourceContainer/NutrientsRate.text = "+" + str(nutrientRate)
+		$Control/ResourceContainer/NutrientsRate.text = "+" + str(nutrientRate)
 	else:
-		$ResourceContainer/NutrientsRate.text = str(nutrientRate)
+		$Control/ResourceContainer/NutrientsRate.text = str(nutrientRate)
 
 func tickYear():
 	currentYear += 1

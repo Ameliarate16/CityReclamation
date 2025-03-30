@@ -1,159 +1,169 @@
-[gd_scene load_steps=9 format=3 uid="uid://ca182hq60fcho"]
+[gd_scene load_steps=8 format=3 uid="uid://ca182hq60fcho"]
 
 [ext_resource type="Script" uid="uid://dctceiewoeq45" path="res://scripts/ui_controller.gd" id="1_gb8pf"]
 [ext_resource type="Script" uid="uid://d4g6it7okbb0h" path="res://scripts/seed_buttons.gd" id="2_iuu36"]
 [ext_resource type="Texture2D" uid="uid://civ2ry1lhbf83" path="res://assets/ui-buttons.png" id="2_mmojm"]
-[ext_resource type="Script" uid="uid://b3yalda6kqbte" path="res://scripts/input_controller.gd" id="4_b4od1"]
-[ext_resource type="PackedScene" uid="uid://bkpqvqinna2qd" path="res://entities/weed.tscn" id="5_b4od1"]
-[ext_resource type="PackedScene" uid="uid://b2782uw8ji36i" path="res://entities/dandelion.tscn" id="6_mwwrp"]
+[ext_resource type="Script" uid="uid://b3yalda6kqbte" path="res://PlayerController.gd" id="4_b4od1"]
 [ext_resource type="Script" uid="uid://4guvahxgcrwq" path="res://scripts/animal_spawner.gd" id="7_d5h3d"]
+[ext_resource type="Texture2D" uid="uid://b5jyxbtro0wjk" path="res://assets/sidewalk.png" id="7_x7hqj"]
 [ext_resource type="PackedScene" uid="uid://bv8y1d3pwiope" path="res://entities/bunny.tscn" id="8_x7hqj"]
 
 [node name="Node2D" type="Node2D"]
 
+[node name="InputController" type="Node2D" parent="."]
+script = ExtResource("4_b4od1")
+
+[node name="AnimalSpawner" type="Node2D" parent="."]
+script = ExtResource("7_d5h3d")
+animalTypes = Array[PackedScene]([ExtResource("8_x7hqj")])
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [node name="GUILayer" type="CanvasLayer" parent="."]
-follow_viewport_enabled = true
 script = ExtResource("1_gb8pf")
 
-[node name="PlantingContainer" type="BoxContainer" parent="GUILayer"]
+[node name="Control" type="Control" parent="GUILayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlantingContainer" type="BoxContainer" parent="GUILayer/Control"]
+layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = -60.0
-offset_right = -10.0
+offset_top = -22.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 10
 script = ExtResource("2_iuu36")
 
-[node name="HerbButton" type="Control" parent="GUILayer/PlantingContainer"]
-custom_minimum_size = Vector2(88, 88)
+[node name="HerbButton" type="Control" parent="GUILayer/Control/PlantingContainer"]
+custom_minimum_size = Vector2(22, 22)
 layout_mode = 2
 size_flags_vertical = 4
 mouse_default_cursor_shape = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="GUILayer/PlantingContainer/HerbButton"]
-scale = Vector2(4, 4)
+[node name="Sprite2D" type="Sprite2D" parent="GUILayer/Control/PlantingContainer/HerbButton"]
 texture = ExtResource("2_mmojm")
 centered = false
 hframes = 5
 
-[node name="MushButton" type="Control" parent="GUILayer/PlantingContainer"]
-custom_minimum_size = Vector2(88, 88)
+[node name="MushButton" type="Control" parent="GUILayer/Control/PlantingContainer"]
+custom_minimum_size = Vector2(22, 22)
 layout_mode = 2
 size_flags_vertical = 4
 mouse_default_cursor_shape = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="GUILayer/PlantingContainer/MushButton"]
-scale = Vector2(4, 4)
+[node name="Sprite2D" type="Sprite2D" parent="GUILayer/Control/PlantingContainer/MushButton"]
 texture = ExtResource("2_mmojm")
 centered = false
 hframes = 5
 
-[node name="BushButton" type="Control" parent="GUILayer/PlantingContainer"]
-custom_minimum_size = Vector2(88, 88)
+[node name="BushButton" type="Control" parent="GUILayer/Control/PlantingContainer"]
+custom_minimum_size = Vector2(22, 22)
 layout_mode = 2
 size_flags_vertical = 4
 mouse_default_cursor_shape = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="GUILayer/PlantingContainer/BushButton"]
-scale = Vector2(4, 4)
+[node name="Sprite2D" type="Sprite2D" parent="GUILayer/Control/PlantingContainer/BushButton"]
 texture = ExtResource("2_mmojm")
 centered = false
 hframes = 5
 
-[node name="TreeButton" type="Control" parent="GUILayer/PlantingContainer"]
-custom_minimum_size = Vector2(88, 88)
+[node name="TreeButton" type="Control" parent="GUILayer/Control/PlantingContainer"]
+custom_minimum_size = Vector2(22, 22)
 layout_mode = 2
 size_flags_vertical = 4
 mouse_default_cursor_shape = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="GUILayer/PlantingContainer/TreeButton"]
-scale = Vector2(4, 4)
+[node name="Sprite2D" type="Sprite2D" parent="GUILayer/Control/PlantingContainer/TreeButton"]
 texture = ExtResource("2_mmojm")
 centered = false
 hframes = 5
 
-[node name="ResourceContainer" type="BoxContainer" parent="GUILayer"]
+[node name="ResourceContainer" type="BoxContainer" parent="GUILayer/Control"]
 offset_right = 175.0
 offset_bottom = 51.0
 
-[node name="NutrientsLabel" type="RichTextLabel" parent="GUILayer/ResourceContainer"]
+[node name="NutrientsLabel" type="RichTextLabel" parent="GUILayer/Control/ResourceContainer"]
 layout_mode = 2
 text = "Nutrients:"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="NutrientsCount" type="RichTextLabel" parent="GUILayer/ResourceContainer"]
+[node name="NutrientsCount" type="RichTextLabel" parent="GUILayer/Control/ResourceContainer"]
 layout_mode = 2
 text = "100"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="NutrientsRate" type="RichTextLabel" parent="GUILayer/ResourceContainer"]
+[node name="NutrientsRate" type="RichTextLabel" parent="GUILayer/Control/ResourceContainer"]
 layout_mode = 2
 text = "+0"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="YearContainer" type="BoxContainer" parent="GUILayer"]
+[node name="YearContainer" type="BoxContainer" parent="GUILayer/Control"]
+layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
+offset_left = -76.0
 offset_bottom = 40.0
 grow_horizontal = 0
 
-[node name="YearLabel" type="RichTextLabel" parent="GUILayer/YearContainer"]
+[node name="YearLabel" type="RichTextLabel" parent="GUILayer/Control/YearContainer"]
 layout_mode = 2
 text = "Year"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="YearCount" type="RichTextLabel" parent="GUILayer/YearContainer"]
+[node name="YearCount" type="RichTextLabel" parent="GUILayer/Control/YearContainer"]
 layout_mode = 2
 text = "2100"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="EntityListContainer" type="TabContainer" parent="GUILayer"]
-anchors_preset = -1
+[node name="EntityListContainer" type="TabContainer" parent="GUILayer/Control"]
+layout_mode = 1
+anchors_preset = 3
 anchor_left = 1.0
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -160.0
+offset_left = -139.0
+offset_top = -31.0
 grow_horizontal = 0
 grow_vertical = 0
 current_tab = 0
 
-[node name="Plants" type="BoxContainer" parent="GUILayer/EntityListContainer"]
+[node name="Plants" type="BoxContainer" parent="GUILayer/Control/EntityListContainer"]
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="Animals" type="BoxContainer" parent="GUILayer/EntityListContainer"]
+[node name="Animals" type="BoxContainer" parent="GUILayer/Control/EntityListContainer"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="InputController" type="Node2D" parent="."]
-script = ExtResource("4_b4od1")
-herbs = Array[PackedScene]([ExtResource("5_b4od1"), ExtResource("6_mwwrp")])
+[node name="Environment" type="Node2D" parent="."]
 
-[node name="AnimalSpawner" type="Node2D" parent="."]
-script = ExtResource("7_d5h3d")
-animalTypes = [ExtResource("8_x7hqj")]
+[node name="Sidewalk" type="Sprite2D" parent="Environment"]
+position = Vector2(0, 75)
+texture = ExtResource("7_x7hqj")
 
-[connection signal="gui_input" from="GUILayer/PlantingContainer/HerbButton" to="GUILayer/PlantingContainer" method="_on_herb_button_gui_input"]
-[connection signal="gui_input" from="GUILayer/PlantingContainer/MushButton" to="GUILayer/PlantingContainer" method="_on_mush_button_gui_input"]
-[connection signal="gui_input" from="GUILayer/PlantingContainer/BushButton" to="GUILayer/PlantingContainer" method="_on_bush_button_gui_input"]
-[connection signal="gui_input" from="GUILayer/PlantingContainer/TreeButton" to="GUILayer/PlantingContainer" method="_on_tree_button_gui_input"]
-[connection signal="createPlant" from="InputController" to="GUILayer" method="_on_input_controller_create_plant"]
 [connection signal="createAnimal" from="AnimalSpawner" to="GUILayer" method="_on_animal_spawner_create_animal"]
+[connection signal="gui_input" from="GUILayer/Control/PlantingContainer/HerbButton" to="GUILayer/Control/PlantingContainer" method="_on_herb_button_gui_input"]
+[connection signal="gui_input" from="GUILayer/Control/PlantingContainer/MushButton" to="GUILayer/Control/PlantingContainer" method="_on_mush_button_gui_input"]
+[connection signal="gui_input" from="GUILayer/Control/PlantingContainer/BushButton" to="GUILayer/Control/PlantingContainer" method="_on_bush_button_gui_input"]
+[connection signal="gui_input" from="GUILayer/Control/PlantingContainer/TreeButton" to="GUILayer/Control/PlantingContainer" method="_on_tree_button_gui_input"]

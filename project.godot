@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 Global="*res://scripts/global.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/scale=4.0
+window/stretch/scale_mode="integer"
+
 [dotnet]
 
 project/assembly_name="CityReclamation"
@@ -42,3 +48,4 @@ AnimalEaters=""
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.462291, 0.462291, 0.46229, 1)
