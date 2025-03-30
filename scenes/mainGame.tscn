@@ -20,6 +20,7 @@ animalTypes = Array[PackedScene]([ExtResource("8_x7hqj")])
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="GUILayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
 script = ExtResource("1_gb8pf")
 
 [node name="Control" type="Control" parent="GUILayer"]
@@ -87,6 +88,7 @@ centered = false
 hframes = 5
 
 [node name="ResourceContainer" type="BoxContainer" parent="GUILayer/Control"]
+layout_mode = 0
 offset_right = 175.0
 offset_bottom = 51.0
 
@@ -135,16 +137,15 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="EntityListContainer" type="TabContainer" parent="GUILayer/Control"]
+visible = false
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 1
-anchors_preset = 3
+anchors_preset = 11
 anchor_left = 1.0
-anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -139.0
-offset_top = -31.0
 grow_horizontal = 0
-grow_vertical = 0
+grow_vertical = 2
 current_tab = 0
 
 [node name="Plants" type="BoxContainer" parent="GUILayer/Control/EntityListContainer"]
@@ -159,7 +160,7 @@ metadata/_tab_index = 1
 [node name="Environment" type="Node2D" parent="."]
 
 [node name="Sidewalk" type="Sprite2D" parent="Environment"]
-position = Vector2(0, 75)
+position = Vector2(0, 50)
 texture = ExtResource("7_x7hqj")
 
 [connection signal="createAnimal" from="AnimalSpawner" to="GUILayer" method="_on_animal_spawner_create_animal"]

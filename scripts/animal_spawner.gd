@@ -2,10 +2,12 @@ extends Node2D
 
 @export var animalTypes: Array[PackedScene]
 
+@onready var gui : CanvasLayer = %GUILayer
+
 signal createAnimal(income)
 
 func _ready():
-	get_node("/root/Node2D/GUILayer").timePassed.connect(Callable(self, "on_time_pass"))
+	gui.timePassed.connect(on_time_pass)
 
 func spawnAnimal(animal):
 	var newAnimal = animal.instantiate()

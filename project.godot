@@ -43,6 +43,10 @@ TreeEaters=""
 MushroomEaters=""
 AnimalEaters=""
 
+[gui]
+
+theme/custom="uid://7jlfwxnpnefc"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
