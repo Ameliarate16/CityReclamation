@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://b8c113rjgum1t"]
+
+[ext_resource type="Script" uid="uid://dqkxkrj6tytjx" path="res://animal.gd" id="1_ou02m"]
+[ext_resource type="Texture2D" uid="uid://7vsr12um7k8d" path="res://assets/fox.png" id="2_ou02m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6blpu"]
+atlas = ExtResource("2_ou02m")
+region = Rect2(22, 0, 11, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tt3c"]
+atlas = ExtResource("2_ou02m")
+region = Rect2(0, 0, 11, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4tse"]
+atlas = ExtResource("2_ou02m")
+region = Rect2(11, 0, 11, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5873"]
+atlas = ExtResource("2_ou02m")
+region = Rect2(44, 0, 11, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wuhhm"]
+atlas = ExtResource("2_ou02m")
+region = Rect2(55, 0, 11, 7)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8lkxg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6blpu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tt3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4tse")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5873")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wuhhm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Fox" type="Node2D" groups=["AnimalEaters", "AnimalEntities"]]
+script = ExtResource("1_ou02m")
+income = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8lkxg")
+offset = Vector2(0, -3.5)

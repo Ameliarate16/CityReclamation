@@ -1,14 +1,25 @@
-[gd_scene load_steps=10 format=3 uid="uid://ca182hq60fcho"]
+[gd_scene load_steps=21 format=3 uid="uid://ca182hq60fcho"]
 
 [ext_resource type="Script" uid="uid://dctceiewoeq45" path="res://scripts/ui_controller.gd" id="1_gb8pf"]
 [ext_resource type="Script" uid="uid://d4g6it7okbb0h" path="res://scripts/seed_buttons.gd" id="2_iuu36"]
 [ext_resource type="Texture2D" uid="uid://civ2ry1lhbf83" path="res://assets/ui-buttons.png" id="2_mmojm"]
 [ext_resource type="Script" uid="uid://b3yalda6kqbte" path="res://scripts/input_controller.gd" id="4_b4od1"]
-[ext_resource type="PackedScene" uid="uid://bkpqvqinna2qd" path="res://entities/weed.tscn" id="5_b4od1"]
-[ext_resource type="PackedScene" uid="uid://b2782uw8ji36i" path="res://entities/dandelion.tscn" id="6_mwwrp"]
+[ext_resource type="PackedScene" uid="uid://cas5rk4ohhhs6" path="res://entities/herbs/centaury.tscn" id="5_2jcoq"]
+[ext_resource type="PackedScene" uid="uid://bkpqvqinna2qd" path="res://entities/herbs/weed.tscn" id="5_b4od1"]
+[ext_resource type="PackedScene" uid="uid://b2782uw8ji36i" path="res://entities/herbs/dandelion.tscn" id="6_mwwrp"]
+[ext_resource type="PackedScene" uid="uid://drq0uqe2simtn" path="res://entities/herbs/poppy.tscn" id="6_pf5yp"]
 [ext_resource type="Script" uid="uid://4guvahxgcrwq" path="res://scripts/animal_spawner.gd" id="7_d5h3d"]
+[ext_resource type="PackedScene" uid="uid://crt7f14im0w7j" path="res://entities/mushes/cremini.tscn" id="7_ohqre"]
 [ext_resource type="Texture2D" uid="uid://b5jyxbtro0wjk" path="res://assets/sidewalk.png" id="7_x7hqj"]
-[ext_resource type="PackedScene" uid="uid://bv8y1d3pwiope" path="res://entities/bunny.tscn" id="8_x7hqj"]
+[ext_resource type="PackedScene" uid="uid://b7kt4opehpod0" path="res://entities/mushes/shimeji.tscn" id="8_tuqy1"]
+[ext_resource type="PackedScene" uid="uid://bv8y1d3pwiope" path="res://entities/animals/bunny.tscn" id="8_x7hqj"]
+[ext_resource type="PackedScene" uid="uid://bjoqucolr0kl8" path="res://entities/mushes/amanita.tscn" id="9_7520g"]
+[ext_resource type="PackedScene" uid="uid://bt428nhx1mm2p" path="res://entities/bushes/bush.tscn" id="10_dv2ri"]
+[ext_resource type="PackedScene" uid="uid://dllwrqtobfg6b" path="res://entities/trees/tree.tscn" id="11_ac8ur"]
+[ext_resource type="PackedScene" uid="uid://c1yaxpgk01tjp" path="res://entities/animals/butterfly.tscn" id="13_vhyf0"]
+[ext_resource type="PackedScene" uid="uid://cql1t6f8s4ufu" path="res://entities/animals/snail.tscn" id="14_mlh56"]
+[ext_resource type="PackedScene" uid="uid://bddrgnmtac6m" path="res://entities/animals/squirrel.tscn" id="16_q1qup"]
+[ext_resource type="PackedScene" uid="uid://b8c113rjgum1t" path="res://entities/animals/fox.tscn" id="17_qp5ae"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -20,11 +31,17 @@ texture = ExtResource("7_x7hqj")
 
 [node name="InputController" type="Node2D" parent="."]
 script = ExtResource("4_b4od1")
-herbs = Array[PackedScene]([ExtResource("5_b4od1"), ExtResource("6_mwwrp")])
+herbs = Array[PackedScene]([ExtResource("5_b4od1"), ExtResource("6_mwwrp"), ExtResource("5_2jcoq"), ExtResource("6_pf5yp")])
+mushrooms = Array[PackedScene]([ExtResource("7_ohqre"), ExtResource("8_tuqy1"), ExtResource("9_7520g")])
+bushes = Array[PackedScene]([ExtResource("10_dv2ri")])
+trees = Array[PackedScene]([ExtResource("11_ac8ur")])
 
 [node name="AnimalSpawner" type="Node2D" parent="."]
 script = ExtResource("7_d5h3d")
-animalTypes = Array[PackedScene]([ExtResource("8_x7hqj")])
+herbEaters = Array[PackedScene]([ExtResource("13_vhyf0"), ExtResource("14_mlh56")])
+bushEaters = Array[PackedScene]([ExtResource("8_x7hqj")])
+treeEaters = Array[PackedScene]([ExtResource("16_q1qup")])
+animalEaters = Array[PackedScene]([ExtResource("17_qp5ae")])
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

@@ -29,15 +29,12 @@ func _unhandled_input(event):
 		elif Global.selected == Global.SeedType.MUSH:
 			var mushType = randi_range(0, mushrooms.size() -1)
 			newPlant = mushrooms[mushType].instantiate()
-			return
 		elif Global.selected == Global.SeedType.BUSH:
 			var bushType = randi_range(0, bushes.size() -1)
 			newPlant = bushes[bushType].instantiate()
-			return
 		elif Global.selected == Global.SeedType.TREE:
 			var treeType = randi_range(0, trees.size() -1)
 			newPlant = trees[treeType].instantiate()
-			return
 		else:
 			return
 		

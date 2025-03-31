@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://crt7f14im0w7j"]
+
+[ext_resource type="Script" uid="uid://bquant640klwd" path="res://scripts/plant.gd" id="1_y2o5n"]
+[ext_resource type="Texture2D" uid="uid://dhg5q0ng08mc2" path="res://assets/cremini.png" id="2_y2o5n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bh62c"]
+atlas = ExtResource("2_y2o5n")
+region = Rect2(0, 0, 3, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rsyl"]
+atlas = ExtResource("2_y2o5n")
+region = Rect2(3, 0, 3, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0jni"]
+atlas = ExtResource("2_y2o5n")
+region = Rect2(6, 0, 3, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuvgu"]
+atlas = ExtResource("2_y2o5n")
+region = Rect2(9, 0, 3, 4)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6dfr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bh62c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rsyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0jni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuvgu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Cremini" type="Node2D" groups=["MushroomPlants", "PlantEntities"]]
+script = ExtResource("1_y2o5n")
+upkeep = -1
+spaceRequired = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_v6dfr")
+offset = Vector2(0, -2)

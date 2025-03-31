@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://bt428nhx1mm2p"]
+
+[ext_resource type="Script" uid="uid://bquant640klwd" path="res://scripts/plant.gd" id="1_mnmtf"]
+[ext_resource type="Texture2D" uid="uid://dxiosmlrgmy6o" path="res://assets/bush.png" id="2_mnmtf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1deqk"]
+atlas = ExtResource("2_mnmtf")
+region = Rect2(0, 0, 11, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_deqge"]
+atlas = ExtResource("2_mnmtf")
+region = Rect2(11, 0, 11, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adpo4"]
+atlas = ExtResource("2_mnmtf")
+region = Rect2(22, 0, 11, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfw5r"]
+atlas = ExtResource("2_mnmtf")
+region = Rect2(33, 0, 11, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6dfr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1deqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_deqge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adpo4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfw5r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bush" type="Node2D" groups=["BushPlants", "PlantEntities"]]
+script = ExtResource("1_mnmtf")
+upkeep = 2
+spaceRequired = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_v6dfr")
+offset = Vector2(0, -4)

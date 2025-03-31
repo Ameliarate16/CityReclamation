@@ -1,7 +1,6 @@
 extends Node2D
 
 @export var income : int
-@export var diet : Global.SeedType
 
 var destinationX : int
 

@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=3 uid="uid://drq0uqe2simtn"]
+
+[ext_resource type="Script" uid="uid://bquant640klwd" path="res://scripts/plant.gd" id="1_eutqg"]
+[ext_resource type="Texture2D" uid="uid://b2rhxi0532o1d" path="res://assets/poppy.png" id="2_eutqg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w15xd"]
+atlas = ExtResource("2_eutqg")
+region = Rect2(0, 0, 3, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irian"]
+atlas = ExtResource("2_eutqg")
+region = Rect2(3, 0, 3, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_le245"]
+atlas = ExtResource("2_eutqg")
+region = Rect2(6, 0, 3, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvq14"]
+atlas = ExtResource("2_eutqg")
+region = Rect2(9, 0, 3, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbnc1"]
+atlas = ExtResource("2_eutqg")
+region = Rect2(12, 0, 3, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gs85q"]
+atlas = ExtResource("2_eutqg")
+region = Rect2(15, 0, 3, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5rml"]
+atlas = ExtResource("2_eutqg")
+region = Rect2(18, 0, 3, 7)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6dfr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w15xd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irian")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_le245")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvq14")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbnc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gs85q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5rml")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Poppy" type="Node2D" groups=["HerbPlants", "PlantEntities"]]
+script = ExtResource("1_eutqg")
+upkeep = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_v6dfr")
+offset = Vector2(0, -3.5)

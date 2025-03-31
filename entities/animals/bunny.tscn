@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bv8y1d3pwiope"]
+[gd_scene load_steps=9 format=3 uid="uid://bv8y1d3pwiope"]
 
 [ext_resource type="Script" uid="uid://dqkxkrj6tytjx" path="res://animal.gd" id="1_t1yv3"]
 [ext_resource type="Texture2D" uid="uid://e0a44ti8x8ix" path="res://assets/bunny.png" id="2_r412g"]
@@ -19,6 +19,10 @@ region = Rect2(15, 0, 5, 5)
 atlas = ExtResource("2_r412g")
 region = Rect2(10, 0, 5, 5)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6j07e"]
+atlas = ExtResource("2_r412g")
+region = Rect2(0, 0, 5, 5)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_8lkxg"]
 animations = [{
 "frames": [{
@@ -37,11 +41,21 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6j07e")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
 }]
 
-[node name="Bunny" type="Node2D" groups=["AnimalEntities", "HerbEaters"]]
+[node name="Bunny" type="Node2D" groups=["AnimalEntities", "BushEaters"]]
 script = ExtResource("1_t1yv3")
 income = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8lkxg")
+animation = &"idle"
+offset = Vector2(0, -2.5)
