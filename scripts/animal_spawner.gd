@@ -1,6 +1,10 @@
 extends Node2D
 
-@export var animalTypes: Array[PackedScene]
+@export var herbEaters: Array[PackedScene]
+@export var mushroomEaters: Array[PackedScene]
+@export var bushEaters: Array[PackedScene]
+@export var treeEaters: Array[PackedScene]
+@export var animalEaters: Array[PackedScene]
 
 @onready var gui : CanvasLayer = %GUILayer
 
@@ -21,4 +25,4 @@ func on_time_pass():
 	var numShrooms = get_tree().get_node_count_in_group("MushroomPlants")
 	if numPlants * 2 - numShrooms > numAnimals:
 		#pick an animal to spawn
-		spawnAnimal(animalTypes[0])
+		spawnAnimal(herbEaters[0])

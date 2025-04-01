@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://bjoqucolr0kl8"]
+
+[ext_resource type="Script" uid="uid://bquant640klwd" path="res://scripts/plant.gd" id="1_ddaxv"]
+[ext_resource type="Texture2D" uid="uid://d23qfg2qkcxsp" path="res://assets/amanita.png" id="2_ddaxv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eiyol"]
+atlas = ExtResource("2_ddaxv")
+region = Rect2(0, 0, 3, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gaquj"]
+atlas = ExtResource("2_ddaxv")
+region = Rect2(3, 0, 3, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31maw"]
+atlas = ExtResource("2_ddaxv")
+region = Rect2(6, 0, 3, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxfav"]
+atlas = ExtResource("2_ddaxv")
+region = Rect2(9, 0, 3, 4)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6dfr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eiyol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gaquj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31maw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxfav")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Amanita" type="Node2D" groups=["MushroomPlants", "PlantEntities"]]
+script = ExtResource("1_ddaxv")
+upkeep = -1
+spaceRequired = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_v6dfr")
+offset = Vector2(0, -2)

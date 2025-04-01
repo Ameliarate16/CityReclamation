@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7kt4opehpod0"]
+
+[ext_resource type="Script" uid="uid://bquant640klwd" path="res://scripts/plant.gd" id="1_hrs43"]
+[ext_resource type="Texture2D" uid="uid://duk3m3blg65j0" path="res://assets/shimeji.png" id="2_hrs43"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_feiln"]
+atlas = ExtResource("2_hrs43")
+region = Rect2(0, 0, 3, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gnxx"]
+atlas = ExtResource("2_hrs43")
+region = Rect2(3, 0, 3, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqofs"]
+atlas = ExtResource("2_hrs43")
+region = Rect2(6, 0, 3, 3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cy7p1"]
+atlas = ExtResource("2_hrs43")
+region = Rect2(9, 0, 3, 3)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6dfr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_feiln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gnxx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqofs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cy7p1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Shimeji" type="Node2D" groups=["MushroomPlants", "PlantEntities"]]
+script = ExtResource("1_hrs43")
+upkeep = -1
+spaceRequired = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_v6dfr")
+offset = Vector2(0, -1.5)

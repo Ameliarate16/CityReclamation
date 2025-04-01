@@ -5,7 +5,7 @@ extends CanvasLayer
 
 @export var currentYear = 2100
 var yearTimer = 0
-var yearLength = 1
+var yearLength = 2.0
 
 @export var currentNutrients = 100
 var nutrientIncome = 1
@@ -22,12 +22,6 @@ func _process(delta):
 	if yearTimer >= yearLength:
 		yearTimer = 0
 		tickYear()
-	#var plants = get_tree().get_nodes_in_group("PlantEntities")
-	#nutrientUpkeep = 0
-	#for plant in plants:
-	#	nutrientUpkeep += 1
-	#	if (plant.upkeep > 0):
-	#		nutrientUpkeep += plant.upkeep
 
 func updateYearLabel():
 	year_label.text = "Year %d" % currentYear

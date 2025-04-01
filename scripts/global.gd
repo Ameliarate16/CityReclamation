@@ -10,4 +10,4 @@ enum SeedType {
 
 var selected : SeedType  = SeedType.NONE
 
-var groundY = 400 #edit when we have ground, ideally we want it to dynamically scale
+var groundY = 42.5 #edit when we have ground, ideally we want it to dynamically scale

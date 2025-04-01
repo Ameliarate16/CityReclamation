@@ -49,8 +49,7 @@ animations = [{
 [node name="Weed" type="Node2D" groups=["HerbPlants", "PlantEntities"]]
 script = ExtResource("1_hmblq")
 upkeep = 1
-spaceRequired = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_v6dfr")
+offset = Vector2(0, -2)

@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://bddrgnmtac6m"]
+
+[ext_resource type="Script" uid="uid://dqkxkrj6tytjx" path="res://animal.gd" id="1_juu7r"]
+[ext_resource type="Texture2D" uid="uid://bkda8shcdbvky" path="res://assets/maybe-squirrel.png" id="2_juu7r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bef1c"]
+atlas = ExtResource("2_juu7r")
+region = Rect2(6, 0, 6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgev3"]
+atlas = ExtResource("2_juu7r")
+region = Rect2(12, 0, 6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpw64"]
+atlas = ExtResource("2_juu7r")
+region = Rect2(18, 0, 6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqelq"]
+atlas = ExtResource("2_juu7r")
+region = Rect2(0, 0, 6, 6)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8lkxg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bef1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgev3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpw64")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqelq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Squirrel" type="Node2D" groups=["AnimalEntities", "TreeEaters"]]
+script = ExtResource("1_juu7r")
+income = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8lkxg")
+offset = Vector2(0, -3)
