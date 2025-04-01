@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://c1yaxpgk01tjp"]
 
-[ext_resource type="Script" uid="uid://dqkxkrj6tytjx" path="res://animal.gd" id="1_1xvwi"]
+[ext_resource type="Script" uid="uid://dqkxkrj6tytjx" path="res://scripts/animal.gd" id="1_1xvwi"]
 [ext_resource type="Texture2D" uid="uid://dyk8qgxysnk8w" path="res://assets/monarch.png" id="2_1xvwi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qrqyg"]

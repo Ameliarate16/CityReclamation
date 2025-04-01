@@ -56,6 +56,8 @@ animations = [{
 [node name="Dandelion" type="Node2D" groups=["HerbPlants", "PlantEntities"]]
 script = ExtResource("1_hvani")
 upkeep = 1
+spaceProvided = 1
+cracksDistance = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v6dfr")

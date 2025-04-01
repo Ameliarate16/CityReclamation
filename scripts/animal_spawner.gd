@@ -16,8 +16,8 @@ func _ready():
 func spawnAnimal(animal):
 	var newAnimal = animal.instantiate()
 	add_child(newAnimal)
-	newAnimal.setPos(Vector2(-20, Global.groundY))
-	createAnimal.emit(newAnimal.getIncome())
+	newAnimal.setPos(Vector2(-150, Global.groundY))
+	createAnimal.emit(newAnimal.income)
 
 func on_time_pass():
 	var numPlants = get_tree().get_node_count_in_group("PlantEntities")

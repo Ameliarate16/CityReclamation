@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bddrgnmtac6m"]
 
-[ext_resource type="Script" uid="uid://dqkxkrj6tytjx" path="res://animal.gd" id="1_juu7r"]
+[ext_resource type="Script" uid="uid://dqkxkrj6tytjx" path="res://scripts/animal.gd" id="1_juu7r"]
 [ext_resource type="Texture2D" uid="uid://bkda8shcdbvky" path="res://assets/maybe-squirrel.png" id="2_juu7r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bef1c"]

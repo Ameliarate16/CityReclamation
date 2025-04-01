@@ -1,8 +1,9 @@
 extends Node2D
 
 @export var upkeep : int
-@export var spaceRequired : int
-var growthLevel = 0
+@export var spaceProvided : int
+@export var cracksDistance: int
+@export var growthLevel = 0
 var maxGrowthLevel
 
 signal plantPlaced(upkeep)
@@ -18,6 +19,4 @@ func setPos(newPos):
 func _ready():
 	maxGrowthLevel = get_node("AnimatedSprite2D").sprite_frames.get_frame_count("default") - 1
 	get_node("/root/Node2D/GUILayer").timePassed.connect(Callable(self, "on_time_pass"))
-
-func getUpkeep():
-	return upkeep
+	get_node("AnimatedSprite2D").frame = growthLevel

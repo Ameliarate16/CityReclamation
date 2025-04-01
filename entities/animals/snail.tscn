@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cql1t6f8s4ufu"]
 
-[ext_resource type="Script" uid="uid://dqkxkrj6tytjx" path="res://animal.gd" id="1_kfbn4"]
+[ext_resource type="Script" uid="uid://dqkxkrj6tytjx" path="res://scripts/animal.gd" id="1_kfbn4"]
 [ext_resource type="Texture2D" uid="uid://dd0acoqo6812f" path="res://assets/snail.png" id="2_kfbn4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rk5rn"]

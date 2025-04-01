@@ -105,7 +105,7 @@ animations = [{
 [node name="Tree" type="Node2D" groups=["PlantEntities", "TreePlants"]]
 script = ExtResource("1_mac5r")
 upkeep = 5
-spaceRequired = 2
+cracksDistance = 25
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v6dfr")

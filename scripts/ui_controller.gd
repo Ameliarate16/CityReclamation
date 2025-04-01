@@ -8,8 +8,8 @@ var yearTimer = 0
 var yearLength = 2.0
 
 @export var currentNutrients = 100
-var nutrientIncome = 1
-var nutrientUpkeep = 0
+var nutrientIncome = 0
+var nutrientUpkeep = 5
 
 signal timePassed
 

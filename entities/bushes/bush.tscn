@@ -42,7 +42,8 @@ animations = [{
 [node name="Bush" type="Node2D" groups=["BushPlants", "PlantEntities"]]
 script = ExtResource("1_mnmtf")
 upkeep = 2
-spaceRequired = 1
+spaceProvided = 2
+cracksDistance = 10
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v6dfr")
