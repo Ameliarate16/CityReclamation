@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bv8y1d3pwiope"]
 
-[ext_resource type="Script" uid="uid://dqkxkrj6tytjx" path="res://animal.gd" id="1_t1yv3"]
+[ext_resource type="Script" uid="uid://dqkxkrj6tytjx" path="res://scripts/animal.gd" id="1_t1yv3"]
 [ext_resource type="Texture2D" uid="uid://e0a44ti8x8ix" path="res://assets/bunny.png" id="2_r412g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uj1on"]

@@ -1,5 +1,8 @@
 extends CanvasLayer
 
+@onready var year_label : Label = $Control/YearLabel
+@onready var nutrients_label : Label = $Control/NutrientsLabel
+
 @export var currentYear = 2100
 var yearTimer = 0
 var yearLength = 1
@@ -27,15 +30,11 @@ func _process(delta):
 	#		nutrientUpkeep += plant.upkeep
 
 func updateYearLabel():
-	$Control/YearContainer/YearCount.text = str(currentYear)
+	year_label.text = "Year %d" % currentYear
 
 func updateNutrientsLabel():
-	$Control/ResourceContainer/NutrientsCount.text = str(currentNutrients)
 	var nutrientRate = nutrientIncome - nutrientUpkeep
-	if nutrientRate >= 0:
-		$Control/ResourceContainer/NutrientsRate.text = "+" + str(nutrientRate)
-	else:
-		$Control/ResourceContainer/NutrientsRate.text = str(nutrientRate)
+	nutrients_label.text = "Nutrients: %d %+d" % [currentNutrients, nutrientRate]
 
 func tickYear():
 	currentYear += 1
