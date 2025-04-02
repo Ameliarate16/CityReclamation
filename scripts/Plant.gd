@@ -6,8 +6,6 @@ extends Node2D
 @export var growthLevel = 0
 var maxGrowthLevel
 
-signal plantPlaced(upkeep)
-
 func on_time_pass():
 	if growthLevel < maxGrowthLevel:
 		growthLevel += 1

@@ -53,7 +53,7 @@ animations = [{
 
 [node name="Fox" type="Node2D" groups=["AnimalEaters", "AnimalEntities"]]
 script = ExtResource("1_ou02m")
-income = 2
+income = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8lkxg")
