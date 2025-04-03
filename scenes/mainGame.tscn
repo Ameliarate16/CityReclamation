@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://ca182hq60fcho"]
+[gd_scene load_steps=30 format=3 uid="uid://ca182hq60fcho"]
 
 [ext_resource type="Script" uid="uid://dctceiewoeq45" path="res://scripts/ui_controller.gd" id="1_gb8pf"]
 [ext_resource type="Script" uid="uid://d4g6it7okbb0h" path="res://scripts/seed_buttons.gd" id="2_iuu36"]
 [ext_resource type="Texture2D" uid="uid://civ2ry1lhbf83" path="res://assets/ui-buttons.png" id="2_mmojm"]
+[ext_resource type="Texture2D" uid="uid://j23knsvht670" path="res://assets/building.png" id="2_pf5yp"]
 [ext_resource type="Script" uid="uid://b3yalda6kqbte" path="res://scripts/input_controller.gd" id="4_b4od1"]
 [ext_resource type="PackedScene" uid="uid://cas5rk4ohhhs6" path="res://entities/herbs/centaury.tscn" id="5_2jcoq"]
 [ext_resource type="PackedScene" uid="uid://bkpqvqinna2qd" path="res://entities/herbs/weed.tscn" id="5_b4od1"]
@@ -21,6 +22,63 @@
 [ext_resource type="PackedScene" uid="uid://bddrgnmtac6m" path="res://entities/animals/squirrel.tscn" id="16_q1qup"]
 [ext_resource type="PackedScene" uid="uid://b8c113rjgum1t" path="res://entities/animals/fox.tscn" id="17_qp5ae"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohqre"]
+atlas = ExtResource("2_pf5yp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuqy1"]
+atlas = ExtResource("2_pf5yp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7520g"]
+atlas = ExtResource("2_pf5yp")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dv2ri"]
+atlas = ExtResource("2_pf5yp")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ac8ur"]
+atlas = ExtResource("2_pf5yp")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhyf0"]
+atlas = ExtResource("2_pf5yp")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlh56"]
+atlas = ExtResource("2_pf5yp")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q1qup"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohqre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuqy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7520g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dv2ri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ac8ur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhyf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlh56")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Environment" type="Node2D" parent="."]
@@ -29,12 +87,20 @@
 position = Vector2(0, 50)
 texture = ExtResource("7_x7hqj")
 
+[node name="Building" type="AnimatedSprite2D" parent="Environment"]
+position = Vector2(127, 29)
+sprite_frames = SubResource("SpriteFrames_q1qup")
+
 [node name="InputController" type="Node2D" parent="."]
 script = ExtResource("4_b4od1")
 herbs = Array[PackedScene]([ExtResource("5_b4od1"), ExtResource("6_mwwrp"), ExtResource("5_2jcoq"), ExtResource("6_pf5yp")])
 mushrooms = Array[PackedScene]([ExtResource("7_ohqre"), ExtResource("8_tuqy1"), ExtResource("9_7520g")])
 bushes = Array[PackedScene]([ExtResource("10_dv2ri")])
 trees = Array[PackedScene]([ExtResource("11_ac8ur")])
+
+[node name="Tree" parent="InputController" instance=ExtResource("11_ac8ur")]
+position = Vector2(-133, 45)
+growthLevel = 12
 
 [node name="AnimalSpawner" type="Node2D" parent="."]
 script = ExtResource("7_d5h3d")
@@ -150,10 +216,6 @@ metadata/_tab_index = 0
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
-
-[node name="Tree" parent="." instance=ExtResource("11_ac8ur")]
-position = Vector2(-133, 45)
-growthLevel = 12
 
 [connection signal="createPlant" from="InputController" to="GUILayer" method="_on_input_controller_create_plant"]
 [connection signal="createAnimal" from="AnimalSpawner" to="GUILayer" method="_on_animal_spawner_create_animal"]

@@ -5,7 +5,7 @@ extends CanvasLayer
 
 @export var currentYear = 2100
 var yearTimer = 0
-var yearLength = 2.0
+var yearLength = 1.825
 
 @export var currentNutrients = 100
 var nutrientIncome = 0
