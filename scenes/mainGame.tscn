@@ -1,11 +1,13 @@
-[gd_scene load_steps=30 format=3 uid="uid://ca182hq60fcho"]
+[gd_scene load_steps=45 format=3 uid="uid://ca182hq60fcho"]
 
 [ext_resource type="Script" uid="uid://dctceiewoeq45" path="res://scripts/ui_controller.gd" id="1_gb8pf"]
 [ext_resource type="Script" uid="uid://d4g6it7okbb0h" path="res://scripts/seed_buttons.gd" id="2_iuu36"]
 [ext_resource type="Texture2D" uid="uid://civ2ry1lhbf83" path="res://assets/ui-buttons.png" id="2_mmojm"]
 [ext_resource type="Texture2D" uid="uid://j23knsvht670" path="res://assets/building.png" id="2_pf5yp"]
+[ext_resource type="Script" uid="uid://4ixojb7chi5b" path="res://scripts/building.gd" id="3_ohqre"]
 [ext_resource type="Script" uid="uid://b3yalda6kqbte" path="res://scripts/input_controller.gd" id="4_b4od1"]
 [ext_resource type="PackedScene" uid="uid://cas5rk4ohhhs6" path="res://entities/herbs/centaury.tscn" id="5_2jcoq"]
+[ext_resource type="Texture2D" uid="uid://cvop383djbhvj" path="res://assets/dirt.png" id="5_7520g"]
 [ext_resource type="PackedScene" uid="uid://bkpqvqinna2qd" path="res://entities/herbs/weed.tscn" id="5_b4od1"]
 [ext_resource type="PackedScene" uid="uid://b2782uw8ji36i" path="res://entities/herbs/dandelion.tscn" id="6_mwwrp"]
 [ext_resource type="PackedScene" uid="uid://drq0uqe2simtn" path="res://entities/herbs/poppy.tscn" id="6_pf5yp"]
@@ -21,6 +23,11 @@
 [ext_resource type="PackedScene" uid="uid://cql1t6f8s4ufu" path="res://entities/animals/snail.tscn" id="14_mlh56"]
 [ext_resource type="PackedScene" uid="uid://bddrgnmtac6m" path="res://entities/animals/squirrel.tscn" id="16_q1qup"]
 [ext_resource type="PackedScene" uid="uid://b8c113rjgum1t" path="res://entities/animals/fox.tscn" id="17_qp5ae"]
+[ext_resource type="Texture2D" uid="uid://cyvcrsljsy48n" path="res://assets/Background_sprites-Sheet_1.png" id="23_tuqy1"]
+[ext_resource type="Texture2D" uid="uid://dt40qkqvyo43u" path="res://assets/centaury.png" id="25_mlh56"]
+[ext_resource type="Texture2D" uid="uid://dhg5q0ng08mc2" path="res://assets/cremini.png" id="26_q1qup"]
+[ext_resource type="Texture2D" uid="uid://dxiosmlrgmy6o" path="res://assets/bush.png" id="27_qp5ae"]
+[ext_resource type="Texture2D" uid="uid://bchblrull5epg" path="res://assets/pine.png" id="28_k768p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ohqre"]
 atlas = ExtResource("2_pf5yp")
@@ -79,6 +86,66 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2otqp"]
+atlas = ExtResource("25_mlh56")
+region = Rect2(30, 0, 5, 6)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uudow"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2otqp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ub25a"]
+atlas = ExtResource("26_q1qup")
+region = Rect2(9, 0, 3, 4)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tl4yg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ub25a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kcat"]
+atlas = ExtResource("27_qp5ae")
+region = Rect2(33, 0, 11, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t6uv7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kcat")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36sq5"]
+atlas = ExtResource("28_k768p")
+region = Rect2(172, 0, 43, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ntw5s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36sq5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Environment" type="Node2D" parent="."]
@@ -88,8 +155,21 @@ position = Vector2(0, 50)
 texture = ExtResource("7_x7hqj")
 
 [node name="Building" type="AnimatedSprite2D" parent="Environment"]
-position = Vector2(127, 29)
+z_index = -5
+position = Vector2(112, 13)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_q1qup")
+script = ExtResource("3_ohqre")
+
+[node name="Sky" type="Sprite2D" parent="Environment"]
+z_index = -10
+position = Vector2(434, -36)
+texture = ExtResource("23_tuqy1")
+
+[node name="Dirt" type="Sprite2D" parent="Environment"]
+z_index = -10
+position = Vector2(-7, 165)
+texture = ExtResource("5_7520g")
 
 [node name="InputController" type="Node2D" parent="."]
 script = ExtResource("4_b4od1")
@@ -100,7 +180,7 @@ trees = Array[PackedScene]([ExtResource("11_ac8ur")])
 
 [node name="Tree" parent="InputController" instance=ExtResource("11_ac8ur")]
 position = Vector2(-133, 45)
-growthLevel = 12
+growthLevel = 6
 
 [node name="AnimalSpawner" type="Node2D" parent="."]
 script = ExtResource("7_d5h3d")
@@ -163,6 +243,11 @@ texture = ExtResource("2_mmojm")
 centered = false
 hframes = 5
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUILayer/Control/PlantingContainer/HerbButton/Sprite2D"]
+position = Vector2(11, 11)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_uudow")
+
 [node name="MushButton" type="Control" parent="GUILayer/Control/PlantingContainer"]
 custom_minimum_size = Vector2(22, 22)
 layout_mode = 2
@@ -173,6 +258,11 @@ mouse_default_cursor_shape = 2
 texture = ExtResource("2_mmojm")
 centered = false
 hframes = 5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUILayer/Control/PlantingContainer/MushButton/Sprite2D"]
+position = Vector2(11, 11)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_tl4yg")
 
 [node name="BushButton" type="Control" parent="GUILayer/Control/PlantingContainer"]
 custom_minimum_size = Vector2(22, 22)
@@ -185,6 +275,10 @@ texture = ExtResource("2_mmojm")
 centered = false
 hframes = 5
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUILayer/Control/PlantingContainer/BushButton/Sprite2D"]
+position = Vector2(11, 11)
+sprite_frames = SubResource("SpriteFrames_t6uv7")
+
 [node name="TreeButton" type="Control" parent="GUILayer/Control/PlantingContainer"]
 custom_minimum_size = Vector2(22, 22)
 layout_mode = 2
@@ -195,6 +289,10 @@ mouse_default_cursor_shape = 2
 texture = ExtResource("2_mmojm")
 centered = false
 hframes = 5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUILayer/Control/PlantingContainer/TreeButton/Sprite2D"]
+position = Vector2(11, -1)
+sprite_frames = SubResource("SpriteFrames_ntw5s")
 
 [node name="EntityListContainer" type="TabContainer" parent="GUILayer/Control"]
 visible = false
@@ -217,9 +315,121 @@ visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
+[node name="SuccessPanel" type="Panel" parent="GUILayer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.5
+offset_top = -22.0
+offset_right = 27.5
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GUILayer/Control/SuccessPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -26.5
+offset_right = 27.5
+offset_bottom = 40.0
+grow_horizontal = 2
+text = "Success!
+You have overgrown the city."
+horizontal_alignment = 1
+
+[node name="QuitButton" type="Button" parent="GUILayer/Control/SuccessPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -15.0
+offset_right = 17.0
+grow_vertical = 0
+text = "Quit"
+
+[node name="SandboxButton" type="Button" parent="GUILayer/Control/SuccessPanel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -26.0
+offset_top = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Continue in
+Sandbox Mode"
+
+[node name="FailurePanel" type="Panel" parent="GUILayer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -22.5
+offset_right = 32.0
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GUILayer/Control/FailurePanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_right = 32.0
+offset_bottom = 40.0
+grow_horizontal = 2
+text = "You ran out of nutrients!
+Your plants have no energy left to grow."
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="GUILayer/Control/FailurePanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -15.0
+offset_right = 17.0
+grow_vertical = 0
+text = "Restart"
+
+[node name="SandboxButton" type="Button" parent="GUILayer/Control/FailurePanel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -26.0
+offset_top = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Continue in 
+Sandbox Mode"
+
+[connection signal="buildingOvergrown" from="Environment/Building" to="GUILayer" method="_on_building_overgrown"]
+[connection signal="createPlant" from="InputController" to="Environment/Building" method="_on_input_controller_create_plant"]
 [connection signal="createPlant" from="InputController" to="GUILayer" method="_on_input_controller_create_plant"]
 [connection signal="createAnimal" from="AnimalSpawner" to="GUILayer" method="_on_animal_spawner_create_animal"]
+[connection signal="timePassed" from="GUILayer" to="Environment/Building" method="_on_time_passed"]
+[connection signal="timePassed" from="GUILayer" to="AnimalSpawner" method="on_time_pass"]
 [connection signal="gui_input" from="GUILayer/Control/PlantingContainer/HerbButton" to="GUILayer/Control/PlantingContainer" method="_on_herb_button_gui_input"]
 [connection signal="gui_input" from="GUILayer/Control/PlantingContainer/MushButton" to="GUILayer/Control/PlantingContainer" method="_on_mush_button_gui_input"]
 [connection signal="gui_input" from="GUILayer/Control/PlantingContainer/BushButton" to="GUILayer/Control/PlantingContainer" method="_on_bush_button_gui_input"]
 [connection signal="gui_input" from="GUILayer/Control/PlantingContainer/TreeButton" to="GUILayer/Control/PlantingContainer" method="_on_tree_button_gui_input"]
+[connection signal="pressed" from="GUILayer/Control/SuccessPanel/QuitButton" to="GUILayer" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="GUILayer/Control/SuccessPanel/SandboxButton" to="GUILayer" method="_on_sandbox_button_pressed"]
+[connection signal="pressed" from="GUILayer/Control/FailurePanel/RestartButton" to="GUILayer" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="GUILayer/Control/FailurePanel/SandboxButton" to="GUILayer" method="_on_sandbox_button_pressed"]

@@ -5,10 +5,10 @@ extends Node
 @export var bushes : Array[PackedScene]
 @export var trees : Array[PackedScene]
 
-signal createPlant(upkeep)
+signal createPlant(plant)
 
 func _unhandled_input(event):
-	if event is InputEventMouseButton \
+	if !Global.gamePaused && event is InputEventMouseButton \
 	&& event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
 		var spawnPosition = event.position - Vector2(get_viewport().size)/8
 		spawnPosition.y = Global.groundY
@@ -31,7 +31,7 @@ func _unhandled_input(event):
 		
 		newPlant.setPos(spawnPosition)
 		add_child(newPlant)
-		createPlant.emit(newPlant.upkeep)
+		createPlant.emit(newPlant)
 
 func checkSpace(spaceRequired, xPos, groupName):
 	var canGrow = false

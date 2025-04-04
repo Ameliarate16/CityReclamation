@@ -43,5 +43,4 @@ income = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8lkxg")
-animation = &"idle"
 offset = Vector2(0, -2)

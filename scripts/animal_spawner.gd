@@ -10,9 +10,6 @@ extends Node2D
 
 signal createAnimal(income)
 
-func _ready():
-	gui.timePassed.connect(on_time_pass)
-
 func spawnAnimal(animal):
 	var newAnimal = animal.instantiate()
 	add_child(newAnimal)
@@ -30,7 +27,7 @@ func on_time_pass():
 	var numPlants = numHerbs + numBushes + numTrees
 	var numAnimals = numHerbEaters + numBushEaters + numTreeEaters + numAnimalEaters
 	
-	if numPlants * 2 > numAnimals && randf() > 0.25:
+	if numPlants * 2 > numAnimals && randf() > 0.5:
 		#pick an animal to spawn
 		var spawnable: Array[PackedScene]
 		if numHerbEaters < numHerbs:
@@ -39,7 +36,7 @@ func on_time_pass():
 			spawnable.append_array(bushEaters)
 		if numTreeEaters < numTrees * 2:
 			spawnable.append_array(treeEaters)
-		if numAnimalEaters + 1 < numAnimals / 5:
+		if numAnimalEaters < numAnimals / 5:
 			spawnable.append_array(animalEaters)
 		
 		if spawnable.size() > 0:

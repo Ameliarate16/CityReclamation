@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dllwrqtobfg6b"]
+[gd_scene load_steps=14 format=3 uid="uid://dllwrqtobfg6b"]
 
 [ext_resource type="Script" uid="uid://bquant640klwd" path="res://scripts/Plant.gd" id="1_mac5r"]
 [ext_resource type="Texture2D" uid="uid://bchblrull5epg" path="res://assets/pine.png" id="2_c3bh8"]
@@ -43,10 +43,6 @@ region = Rect2(344, 0, 43, 42)
 atlas = ExtResource("2_c3bh8")
 region = Rect2(387, 0, 43, 42)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ufp0n"]
-atlas = ExtResource("2_c3bh8")
-region = Rect2(430, 0, 43, 42)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_v6dfr"]
 animations = [{
 "frames": [{
@@ -79,9 +75,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h8q1s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ufp0n")
 }],
 "loop": true,
 "name": &"default",
@@ -89,6 +82,7 @@ animations = [{
 }]
 
 [node name="Tree" type="Node2D" groups=["PlantEntities", "TreePlants"]]
+z_index = -2
 script = ExtResource("1_mac5r")
 upkeep = 5
 cracksDistance = 25

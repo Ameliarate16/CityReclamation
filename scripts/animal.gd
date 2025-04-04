@@ -15,26 +15,33 @@ func _ready():
 	get_node("AnimatedSprite2D").play("default")
 
 func _physics_process(delta):
-	if haltTimer <= 0:
-		if (randf() < 0.002):
-			haltTimer = randf_range(1, 5)
-			get_node("AnimatedSprite2D").play("idle")
-		if position.x < destinationX:
-			get_node("AnimatedSprite2D").flip_h = false
-			position.x += speed * delta
-			if position.x >= destinationX:
-				newDestination()
-		elif position.x > destinationX:
-			get_node("AnimatedSprite2D").flip_h = true
-			position.x -= speed * delta
-			if position.x <= destinationX:
+	if !Global.gamePaused:
+		if haltTimer <= 0:
+			if (randf() < 0.002):
+				haltTimer = randf_range(1, 5)
+				get_node("AnimatedSprite2D").play("idle")
+			if position.x < destinationX:
+				get_node("AnimatedSprite2D").flip_h = false
+				position.x += speed * delta
+				if position.x >= destinationX:
+					newDestination()
+			elif position.x > destinationX:
+				get_node("AnimatedSprite2D").flip_h = true
+				position.x -= speed * delta
+				if position.x <= destinationX:
+					newDestination()
+			else:
 				newDestination()
 		else:
-			newDestination()
+			haltTimer -= delta
+			if haltTimer <= 0:
+				get_node("AnimatedSprite2D").play("default")
+		
+		if !get_node("AnimatedSprite2D").is_playing():
+			get_node("AnimatedSprite2D").play()
+	
 	else:
-		haltTimer -= delta
-		if haltTimer <= 0:
-			get_node("AnimatedSprite2D").play("default")
+		get_node("AnimatedSprite2D").pause()
 
 func newDestination():
 	destinationX = randf_range(leftBounds, rightBounds)
