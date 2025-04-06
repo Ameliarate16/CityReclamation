@@ -1,0 +1,183 @@
+[gd_scene load_steps=14 format=3 uid="uid://d3xp3xkdy47fb"]
+
+[ext_resource type="Texture2D" uid="uid://b5jyxbtro0wjk" path="res://assets/sidewalk.png" id="1_7nrmo"]
+[ext_resource type="Script" uid="uid://hglxl6jc0rn" path="res://scripts/main_menu.gd" id="1_clbkb"]
+[ext_resource type="Texture2D" uid="uid://cyvcrsljsy48n" path="res://assets/Background_sprites-Sheet_1.png" id="1_qkhwq"]
+[ext_resource type="Texture2D" uid="uid://j23knsvht670" path="res://assets/building.png" id="2_clbkb"]
+[ext_resource type="Texture2D" uid="uid://cvop383djbhvj" path="res://assets/dirt.png" id="5_y35fp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohqre"]
+atlas = ExtResource("2_clbkb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuqy1"]
+atlas = ExtResource("2_clbkb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7520g"]
+atlas = ExtResource("2_clbkb")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dv2ri"]
+atlas = ExtResource("2_clbkb")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ac8ur"]
+atlas = ExtResource("2_clbkb")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhyf0"]
+atlas = ExtResource("2_clbkb")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlh56"]
+atlas = ExtResource("2_clbkb")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dj72i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohqre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuqy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7520g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dv2ri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ac8ur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vhyf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlh56")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Sidewalk" type="Sprite2D" parent="Environment"]
+position = Vector2(0, 50)
+texture = ExtResource("1_7nrmo")
+
+[node name="Building" type="AnimatedSprite2D" parent="Environment"]
+z_index = -5
+position = Vector2(112, 13)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_dj72i")
+
+[node name="Sky" type="Sprite2D" parent="Environment"]
+z_index = -10
+position = Vector2(434, -36)
+texture = ExtResource("1_qkhwq")
+
+[node name="Dirt" type="Sprite2D" parent="Environment"]
+z_index = -10
+position = Vector2(-7, 165)
+texture = ExtResource("5_y35fp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_clbkb")
+
+[node name="StartButton" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.738
+anchor_right = 0.5
+anchor_bottom = 0.738
+offset_left = -80.0
+offset_top = -7.22403
+offset_right = -50.0
+offset_bottom = 7.77597
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start Game"
+
+[node name="InstructionsButton" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.739
+anchor_right = 0.5
+anchor_bottom = 0.739
+offset_left = 34.0
+offset_top = -10.872
+offset_right = 69.0
+offset_bottom = 11.128
+grow_horizontal = 2
+grow_vertical = 0
+text = "Instructions 
+(Please Read!)"
+
+[node name="InstructionsPanel" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/InstructionsPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -25.0
+offset_bottom = 40.0
+grow_horizontal = 2
+text = "The goal of the game is to overgrow the building by surrounding it with 2 trees and 3 of each other plant without running out of nutrients.
+
+Plants create cracks out to a certain distance away, called their influence range. Each plant requires cracks of a certain size to grow. However, plants of the same type cannot be grown in each others' influence range. Additionally, mushrooms do not create cracks for other plants and can only be grown near a tree.
+
+Each plant has a number of nutrients it requires each year to survive. Nutrients are gained from mushrooms and from the animals that are attracted by your plants. Placing more plants will bring more animals."
+fit_content = true
+scroll_active = false
+
+[node name="CloseInstructions" type="Button" parent="CanvasLayer/Control/InstructionsPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -20.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = 20.0
+grow_horizontal = 0
+text = "X"
+
+[connection signal="pressed" from="CanvasLayer/Control/StartButton" to="CanvasLayer/Control" method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/InstructionsButton" to="CanvasLayer/Control" method="_on_instructions_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/InstructionsPanel/CloseInstructions" to="CanvasLayer/Control" method="_on_close_instructions_pressed"]

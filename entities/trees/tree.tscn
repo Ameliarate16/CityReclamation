@@ -85,7 +85,8 @@ animations = [{
 z_index = -2
 script = ExtResource("1_mac5r")
 upkeep = 5
-cracksDistance = 25
+spaceProvided = 1
+cracksDistance = 24
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v6dfr")

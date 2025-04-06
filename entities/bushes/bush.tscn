@@ -43,8 +43,8 @@ animations = [{
 z_index = -1
 script = ExtResource("1_mnmtf")
 upkeep = 2
-spaceProvided = 2
-cracksDistance = 10
+spaceProvided = 3
+cracksDistance = 12
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v6dfr")

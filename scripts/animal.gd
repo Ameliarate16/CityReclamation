@@ -54,7 +54,6 @@ func _physics_process(delta):
 				animation.flip_h = position.x > destinationX
 				position.x = move_toward(position.x, destinationX, speed * delta)
 				if abs(position.x - destinationX) <= 1:
-					print("reach destination")
 					newDestination()
 				
 				stateTimer -= delta
