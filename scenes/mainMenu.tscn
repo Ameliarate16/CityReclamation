@@ -109,6 +109,25 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_clbkb")
 
+[node name="TitleLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.247
+anchor_right = 0.5
+anchor_bottom = 0.247
+offset_left = -20.0
+offset_top = -10.056
+offset_right = 20.0
+offset_bottom = 9.944
+grow_horizontal = 2
+grow_vertical = 2
+text = "Overgrown"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="StartButton" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 1
 anchors_preset = -1
@@ -116,9 +135,9 @@ anchor_left = 0.5
 anchor_top = 0.738
 anchor_right = 0.5
 anchor_bottom = 0.738
-offset_left = -80.0
+offset_left = -54.0
 offset_top = -7.22403
-offset_right = -50.0
+offset_right = -24.0
 offset_bottom = 7.77597
 grow_horizontal = 2
 grow_vertical = 2
@@ -131,14 +150,13 @@ anchor_left = 0.5
 anchor_top = 0.739
 anchor_right = 0.5
 anchor_bottom = 0.739
-offset_left = 34.0
-offset_top = -10.872
-offset_right = 69.0
-offset_bottom = 11.128
+offset_left = 24.0
+offset_top = -7.87201
+offset_right = 56.0
+offset_bottom = 7.12799
 grow_horizontal = 2
 grow_vertical = 0
-text = "Instructions 
-(Please Read!)"
+text = "Instructions"
 
 [node name="InstructionsPanel" type="Panel" parent="CanvasLayer/Control"]
 visible = false
@@ -164,11 +182,11 @@ offset_bottom = 40.0
 grow_horizontal = 2
 text = "The goal of the game is to overgrow the building by surrounding it with 2 trees and 3 of each other plant without running out of nutrients.
 
-Click on the buttons at the bottom of the screen to select which seed to plant, then click where you want to plant the seed and it will grow there if it can.
+Click on the buttons at the bottom of the screen to select which plant type to grow, then click where you want to place it and it will grow there if it can.
 
-Plants create cracks out to a certain distance away, called their influence range. Each plant requires cracks of a certain size to grow. However, plants of the same type cannot be grown in each others' influence range. Additionally, mushrooms do not create cracks for other plants and can only be grown near a tree.
+Most plants create cracks in the pavement out to a certain distance away, called their influence range. (Cracks are not visible to the player.) Each plant requires cracks of a certain size to grow. However, plants will crowd out others of the same type, preventing them from growing within their influence range.
 
-Each plant has a number of nutrients it requires each year to survive. Nutrients are gained from mushrooms and from the animals that are attracted by your plants. Placing more plants will bring more animals."
+Each plant requires nutrients each year to survive. Nutrients are gained from mushrooms and from the animals that are attracted by your plants."
 fit_content = true
 scroll_active = false
 
