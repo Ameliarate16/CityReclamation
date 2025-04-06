@@ -419,6 +419,26 @@ grow_vertical = 0
 text = "Continue in 
 Sandbox Mode"
 
+[node name="Tooltip" type="Label" parent="GUILayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.5
+offset_top = -23.5
+offset_right = 20.5
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+text = "testasdfasdfasdfasdf
+asdfasdfsdfasdfasdf
+asdfasd
+fas
+dfasdfasdfasef"
+
 [connection signal="buildingOvergrown" from="Environment/Building" to="GUILayer" method="_on_building_overgrown"]
 [connection signal="createPlant" from="InputController" to="Environment/Building" method="_on_input_controller_create_plant"]
 [connection signal="createPlant" from="InputController" to="GUILayer" method="_on_input_controller_create_plant"]

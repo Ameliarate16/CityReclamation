@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://b2782uw8ji36i"]
 
-[ext_resource type="Script" uid="uid://bquant640klwd" path="res://scripts/plant.gd" id="1_hvani"]
+[ext_resource type="Script" uid="uid://bquant640klwd" path="res://scripts/Plant.gd" id="1_hvani"]
 [ext_resource type="Texture2D" uid="uid://do5w2j8vcdycm" path="res://assets/dandelion.png" id="2_hvani"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vlo04"]

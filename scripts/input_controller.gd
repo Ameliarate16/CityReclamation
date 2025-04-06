@@ -7,7 +7,10 @@ extends Node
 
 signal createPlant(plant)
 
+@onready var tooltip : Label = $"../GUILayer/Tooltip"
+
 func _unhandled_input(event):
+	tooltip.hide()
 	if !Global.gamePaused && event is InputEventMouseButton \
 	&& event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
 		var spawnPosition = event.position - Vector2(get_viewport().size)/8

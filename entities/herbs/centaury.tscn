@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://cas5rk4ohhhs6"]
 
-[ext_resource type="Script" uid="uid://bquant640klwd" path="res://scripts/plant.gd" id="1_ctu5h"]
+[ext_resource type="Script" uid="uid://bquant640klwd" path="res://scripts/Plant.gd" id="1_ctu5h"]
 [ext_resource type="Texture2D" uid="uid://dt40qkqvyo43u" path="res://assets/centaury.png" id="2_ctu5h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m51o1"]

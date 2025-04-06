@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://drq0uqe2simtn"]
 
-[ext_resource type="Script" uid="uid://bquant640klwd" path="res://scripts/plant.gd" id="1_eutqg"]
+[ext_resource type="Script" uid="uid://bquant640klwd" path="res://scripts/Plant.gd" id="1_eutqg"]
 [ext_resource type="Texture2D" uid="uid://b2rhxi0532o1d" path="res://assets/poppy.png" id="2_eutqg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w15xd"]

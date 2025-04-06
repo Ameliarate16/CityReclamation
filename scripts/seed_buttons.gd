@@ -5,6 +5,8 @@ extends BoxContainer
 @onready var bush_sprite : Sprite2D = $BushButton/Sprite2D
 @onready var tree_sprite : Sprite2D = $TreeButton/Sprite2D
 
+@onready var tooltip : Label = $"../../Tooltip"
+
 func _ready():
 	select(Global.SeedType.HERB)
 
@@ -27,17 +29,38 @@ func select(which : Global.SeedType) -> void:
 
 
 func _on_herb_button_gui_input(event:InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		tooltip.show()
+		tooltip.size = Vector2(0, 0)
+		tooltip.text = "Flower\nUpkeep: 1\nInfluence: 5"
+		tooltip.global_position = event.global_position - Vector2(0, 5 + tooltip.size.y)
+
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		select(Global.SeedType.HERB)
 
 func _on_tree_button_gui_input(event:InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		tooltip.show()
+		tooltip.size = Vector2(0, 0)
+		tooltip.text = "Tree\nUpkeep: 5\nInfluence: 25"
+		tooltip.global_position = event.global_position - Vector2(0, 5 + tooltip.size.y)
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		select(Global.SeedType.TREE)
 
 func _on_bush_button_gui_input(event:InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		tooltip.show()
+		tooltip.size = Vector2(0, 0)
+		tooltip.text = "Bush\nUpkeep: 2\nInfluence: 10"
+		tooltip.global_position = event.global_position - Vector2(0, 5 + tooltip.size.y)
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		select(Global.SeedType.BUSH)
 
 func _on_mush_button_gui_input(event:InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		tooltip.show()
+		tooltip.size = Vector2(0, 0)
+		tooltip.text = "Mushroom\nMust be placed in the shade under a tree\nUpkeep: -1\nInfluence: 0"
+		tooltip.global_position = event.global_position - Vector2(0, 5 + tooltip.size.y)
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		select(Global.SeedType.MUSH)

@@ -1,45 +1,52 @@
-[gd_scene load_steps=8 format=3 uid="uid://cql1t6f8s4ufu"]
+[gd_scene load_steps=9 format=3 uid="uid://cql1t6f8s4ufu"]
 
 [ext_resource type="Script" uid="uid://dqkxkrj6tytjx" path="res://scripts/animal.gd" id="1_kfbn4"]
 [ext_resource type="Texture2D" uid="uid://dd0acoqo6812f" path="res://assets/snail.png" id="2_kfbn4"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rk5rn"]
-atlas = ExtResource("2_kfbn4")
-region = Rect2(8, 0, 4, 2)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_frmtq"]
 atlas = ExtResource("2_kfbn4")
 region = Rect2(12, 0, 4, 2)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfbn4"]
+atlas = ExtResource("2_kfbn4")
+region = Rect2(12, 0, 4, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rk5rn"]
+atlas = ExtResource("2_kfbn4")
+region = Rect2(8, 0, 4, 2)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_55q52"]
 atlas = ExtResource("2_kfbn4")
-region = Rect2(0, 0, 4, 2)
+region = Rect2(4, 0, 4, 2)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fck3v"]
 atlas = ExtResource("2_kfbn4")
-region = Rect2(4, 0, 4, 2)
+region = Rect2(0, 0, 4, 2)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8lkxg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rk5rn")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_frmtq")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfbn4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rk5rn")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_55q52")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fck3v")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle",
 "speed": 5.0
 }]
