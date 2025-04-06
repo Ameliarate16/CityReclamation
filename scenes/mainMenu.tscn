@@ -83,6 +83,7 @@ z_index = -5
 position = Vector2(112, 13)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_dj72i")
+speed_scale = 0.5
 script = ExtResource("3_clbkb")
 
 [node name="Sky" type="Sprite2D" parent="Environment"]
@@ -162,6 +163,8 @@ offset_right = -25.0
 offset_bottom = 40.0
 grow_horizontal = 2
 text = "The goal of the game is to overgrow the building by surrounding it with 2 trees and 3 of each other plant without running out of nutrients.
+
+Click on the buttons at the bottom of the screen to select which seed to plant, then click where you want to plant the seed and it will grow there if it can.
 
 Plants create cracks out to a certain distance away, called their influence range. Each plant requires cracks of a certain size to grow. However, plants of the same type cannot be grown in each others' influence range. Additionally, mushrooms do not create cracks for other plants and can only be grown near a tree.
 
