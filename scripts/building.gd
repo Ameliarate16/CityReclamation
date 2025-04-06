@@ -29,9 +29,9 @@ func _on_time_passed():
 		newFrame += 1
 	if treesNearby >= 1:
 		newFrame += 1
-	if herbsNearby >= 2 && shroomsNearby >= 2 && bushesNearby >= 2 && treesNearby >= 2:
+	if herbsNearby >= 2 && shroomsNearby >= 2 && bushesNearby >= 2 && treesNearby >= 1:
 		newFrame += 1
-	if herbsNearby >= 3 && shroomsNearby >= 3 && bushesNearby >= 3 && treesNearby >= 3:
+	if herbsNearby >= 3 && shroomsNearby >= 3 && bushesNearby >= 3 && treesNearby >= 2:
 		newFrame += 1
 		buildingOvergrown.emit()
 	frame = newFrame
