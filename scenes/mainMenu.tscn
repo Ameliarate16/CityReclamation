@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://d3xp3xkdy47fb"]
+[gd_scene load_steps=15 format=3 uid="uid://d3xp3xkdy47fb"]
 
 [ext_resource type="Texture2D" uid="uid://b5jyxbtro0wjk" path="res://assets/sidewalk.png" id="1_7nrmo"]
 [ext_resource type="Script" uid="uid://hglxl6jc0rn" path="res://scripts/main_menu.gd" id="1_clbkb"]
 [ext_resource type="Texture2D" uid="uid://cyvcrsljsy48n" path="res://assets/Background_sprites-Sheet_1.png" id="1_qkhwq"]
 [ext_resource type="Texture2D" uid="uid://j23knsvht670" path="res://assets/building.png" id="2_clbkb"]
+[ext_resource type="Script" uid="uid://bmav1dkawr12f" path="res://scenes/menuBuilding.gd" id="3_clbkb"]
 [ext_resource type="Texture2D" uid="uid://cvop383djbhvj" path="res://assets/dirt.png" id="5_y35fp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ohqre"]
@@ -58,9 +59,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mlh56")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 1.0
 }]
 
 [node name="Control" type="Control"]
@@ -82,6 +83,7 @@ z_index = -5
 position = Vector2(112, 13)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_dj72i")
+script = ExtResource("3_clbkb")
 
 [node name="Sky" type="Sprite2D" parent="Environment"]
 z_index = -10
@@ -138,6 +140,7 @@ text = "Instructions
 (Please Read!)"
 
 [node name="InstructionsPanel" type="Panel" parent="CanvasLayer/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
