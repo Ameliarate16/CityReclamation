@@ -116,12 +116,13 @@ anchor_left = 0.5
 anchor_top = 0.247
 anchor_right = 0.5
 anchor_bottom = 0.247
-offset_left = -20.0
-offset_top = -10.056
-offset_right = 20.0
-offset_bottom = 9.944
+offset_left = -60.0
+offset_top = -28.056
+offset_right = 60.0
+offset_bottom = 27.944
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 20
 text = "Overgrown"
 fit_content = true
 scroll_active = false
@@ -173,13 +174,15 @@ grow_vertical = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/InstructionsPanel"]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 5.0
 offset_top = 5.0
 offset_right = -25.0
-offset_bottom = 40.0
+offset_bottom = -5.0
 grow_horizontal = 2
+grow_vertical = 2
 text = "The goal of the game is to overgrow the building by surrounding it with 2 trees and 3 of each other plant without running out of nutrients.
 
 Click on the buttons at the bottom of the screen to select which plant type to grow, then click where you want to place it and it will grow there if it can.
@@ -187,8 +190,6 @@ Click on the buttons at the bottom of the screen to select which plant type to g
 Most plants create cracks in the pavement out to a certain distance away, called their influence range. (Cracks are not visible to the player.) Each plant requires cracks of a certain size to grow. However, plants will crowd out others of the same type, preventing them from growing within their influence range.
 
 Each plant requires nutrients each year to survive. Nutrients are gained from mushrooms and from the animals that are attracted by your plants."
-fit_content = true
-scroll_active = false
 
 [node name="CloseInstructions" type="Button" parent="CanvasLayer/Control/InstructionsPanel"]
 layout_mode = 1
