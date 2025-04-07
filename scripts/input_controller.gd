@@ -17,16 +17,16 @@ func _unhandled_input(event):
 		spawnPosition.y = Global.groundY
 		var newPlant
 		
-		if Global.selected == Global.SeedType.HERB && checkSpace(0, spawnPosition.x, "HerbPlants"):
+		if Global.selected == Global.SeedType.HERB && checkSpace(1, spawnPosition.x, "HerbPlants"):
 			var herbType = randi_range(0, herbs.size() -1)
 			newPlant = herbs[herbType].instantiate()
 		elif Global.selected == Global.SeedType.MUSH && checkShroomSpace(spawnPosition.x):
 			var mushType = randi_range(0, mushrooms.size() -1)
 			newPlant = mushrooms[mushType].instantiate()
-		elif Global.selected == Global.SeedType.BUSH && checkSpace(1, spawnPosition.x, "BushPlants"):
+		elif Global.selected == Global.SeedType.BUSH && checkSpace(2, spawnPosition.x, "BushPlants"):
 			var bushType = randi_range(0, bushes.size() -1)
 			newPlant = bushes[bushType].instantiate()
-		elif Global.selected == Global.SeedType.TREE && checkSpace(2, spawnPosition.x, "TreePlants"):
+		elif Global.selected == Global.SeedType.TREE && checkSpace(3, spawnPosition.x, "TreePlants"):
 			var treeType = randi_range(0, trees.size() -1)
 			newPlant = trees[treeType].instantiate()
 		else:
@@ -48,9 +48,9 @@ func checkSpace(spaceRequired, xPos, groupName):
 
 func checkShroomSpace(xPos):
 	for plant in get_tree().get_nodes_in_group("MushroomPlants"):
-		if abs(plant.position.x - xPos) < 10:
+		if abs(plant.position.x - xPos) < 8:
 			return false
 	for plant in get_tree().get_nodes_in_group("TreePlants"):
-		if abs(plant.position.x - xPos) < 10:
+		if abs(plant.position.x - xPos) < 12:
 			return true
 	return false

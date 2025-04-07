@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bkpqvqinna2qd"]
 
-[ext_resource type="Script" uid="uid://bquant640klwd" path="res://scripts/plant.gd" id="1_hmblq"]
+[ext_resource type="Script" uid="uid://bquant640klwd" path="res://scripts/Plant.gd" id="1_hmblq"]
 [ext_resource type="Texture2D" uid="uid://bof0u845hbq2f" path="res://assets/weed.png" id="1_rhnbr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hmblq"]
@@ -49,8 +49,8 @@ animations = [{
 [node name="Weed" type="Node2D" groups=["HerbPlants", "PlantEntities"]]
 script = ExtResource("1_hmblq")
 upkeep = 1
-spaceProvided = 1
-cracksDistance = 5
+spaceProvided = 2
+cracksDistance = 6
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v6dfr")
